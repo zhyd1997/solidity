@@ -27,10 +27,12 @@ library Set {
   }
 }
 
+using Set for Data;
+
 contract SetLib {
   Data knownValues;
 
   function register(uint value) public {
-    require(Set.insert(knownValues, value));
+    require(knownValues.insert(value));
   }
 }
